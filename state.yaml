@@ -1,20 +1,36 @@
 apiVersion: apps/v1
 kind: StatefulSet
 metadata:
-  name: example-statefulset
+  name: example-state
 spec:
-  serviceName: "example"
+  serviceName: "example-headles"  # Corrected the service name
   replicas: 10
   selector:
     matchLabels:
       app: example
+      env: dev
   template:
     metadata:
       labels:
         app: example
+        env: dev
     spec:
       containers:
       - name: example-container
         image: nginx
         ports:
         - containerPort: 80
+---
+apiVersion: v1
+kind: Service
+metadata:
+  name: example-headless
+spec:
+  clusterIP: None
+  selector:
+    app: example
+    env: dev
+  ports:
+    - protocol: TCP
+      port: 80
+      targetPort: 80
