@@ -20,8 +20,8 @@ spec:
         - containerPort: 80
         volumeMounts:
         - name: data-volume
-          mountPath: /usr/share/nginx/html
+          mountPath: /usr/
       volumes:
       - name: data-volume
         hostPath:
-          path: /var/log
+          path: /var/
