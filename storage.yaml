@@ -48,8 +48,9 @@ spec:
       volumes: 
       - name: nginx-logs 
       - name: filebeat-configmap 
-        ConfigMap: filebeat-config 
-        items: 
-          - key: filebeat.yml 
-            path: filebeat.yml
+        ConfigMap: 
+          name: filebeat-config
+          items: 
+            - key: filebeat.yml 
+              path: filebeat.yml
   
