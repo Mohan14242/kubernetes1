@@ -45,3 +45,11 @@ spec:
           image: nginx
           ports:
             - containerPort: 80
+      volumes: 
+      - name: nginx-logs 
+      - name: filebeat-configmap 
+        ConfigMap: filebeat-config 
+        items: 
+          - key: filebeat.yml 
+            path: filebeat.yml
+  
