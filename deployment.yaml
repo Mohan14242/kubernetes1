@@ -1,27 +1,19 @@
 apiVersion: apps/v1
-kind: DaemonSet
+kind: Deployment
 metadata:
-  name: my-daemonset
-  labels:
-    app: my-daemonset
+  name: example-deployment
 spec:
+  replicas: 3
   selector:
     matchLabels:
-      app: my-daemonset
+      app: example
   template:
     metadata:
       labels:
-        app: my-daemonset
+        app: example
     spec:
       containers:
-      - name: my-container
+      - name: example-container
         image: nginx
         ports:
         - containerPort: 80
-        volumeMounts:
-        - name: data-volume
-          mountPath: /usr/share/nginx
-      volumes:
-      - name: data-volume
-        hostPath:
-          path: /var/log
