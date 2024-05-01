@@ -3,7 +3,7 @@ kind: StatefulSet
 metadata:
   name: example-statefulset
 spec:
-  serviceName: "example"
+  serviceName: ex  # Corrected the service name
   replicas: 10
   selector:
     matchLabels:
