@@ -1,7 +1,10 @@
 apiVersion: apps/v1
 kind: Deployment
 metadata:
-  name: nginx-deployment1
+  name: nginx-deployment10
+  labels:
+    name: {{.values.metadata.name}}
+    env: {{.values.metadata.env}}
 spec:
   replicas: 3
   selector:
