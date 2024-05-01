@@ -13,6 +13,7 @@ spec:
     metadata:
       labels:
         app: example
+        env: dev
     spec:
       containers:
       - name: example-container
