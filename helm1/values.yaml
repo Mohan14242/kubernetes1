@@ -1,3 +1,3 @@
 name: my-app
-replicas: 30
+replicas: 5
 
