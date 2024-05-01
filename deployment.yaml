@@ -20,8 +20,8 @@ spec:
         - containerPort: 80
         volumeMounts:
         - name: data-volume
-          mountPath: /usr/
+          mountPath: /usr
       volumes:
       - name: data-volume
         hostPath:
-          path: /var/
+          path: /var
