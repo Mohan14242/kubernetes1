@@ -23,3 +23,25 @@ roleRef:
   kind: Role #this must be Role or ClusterRole
   name: pod-reader # this must match the name of the Role or ClusterRole you wish to bind to
   apiGroup: rbac.authorization.k8s.io
+---
+apiVersion: v1
+data:
+  mapRoles: |
+    - groups:
+      - system:bootstrappers
+      - system:nodes
+      rolearn: arn:aws:iam::339712780863:role/eksctl-eks-spot-cluster3-nodegroup-NodeInstanceRole-muv6hHrUsDHr
+      username: system:node:{{EC2PrivateDNSName}}
+  mapusers: |
+    - groups: 
+      - roboshop-admin 
+      userarn: arn:aws:iam::339712780863:user/chiru
+      username: chiru 
+kind: ConfigMap
+metadata:
+  creationTimestamp: "2024-05-01T04:40:22Z"
+  name: aws-auth
+  namespace: kube-system
+  resourceVersion: "1330"
+  uid: 82370405-3f9f-4f22-9aef-3f7f8a003d8b
+
