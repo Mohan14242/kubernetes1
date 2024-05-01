@@ -1,3 +1,3 @@
 metadata:
-  name: "nginx"
+  name: nginx
   env: dev 
