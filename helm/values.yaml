@@ -1,3 +1,8 @@
 metadata:
-  name: nginx
-  env: dev 
+  name: "nginx-deployment"
+  env: "production"
+replicas: 3
+image:
+  repository: "nginx"
+  tag: "latest"
+containerPort: 80
