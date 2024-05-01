@@ -4,7 +4,7 @@ metadata:
   name: example-statefulset
 spec:
   serviceName: "example"
-  replicas: 3
+  replicas: 10
   selector:
     matchLabels:
       app: example
@@ -18,14 +18,3 @@ spec:
         image: nginx
         ports:
         - containerPort: 80
-        volumeMounts:
-        - name: data
-          mountPath: /usr/share/nginx/html
-  volumeClaimTemplates:
-  - metadata:
-      name: data
-    spec:
-      accessModes: [ "ReadWriteOnce" ]
-      resources:
-        requests:
-          storage: 1Gi
