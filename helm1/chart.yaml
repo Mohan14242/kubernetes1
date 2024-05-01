@@ -2,4 +2,4 @@ apiVersion: v2
 name: nginx
 description: A Helm chart for deploying my application
 version: 1.2.1
-appVersion: 1.2.2
+appVersion: 1.2.3
