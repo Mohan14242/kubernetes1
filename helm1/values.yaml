@@ -1,1 +1,2 @@
-name: "mohan"
+name: my-app
+replicas: 3

@@ -4,3 +4,18 @@ metadata:
   name: {{ .values.name }}-deployment
   labels:
     app: nginx
+spec:
+  replicas: {{ .values.replicas }}
+  selector:
+    matchLabels:
+      app: nginx
+  template:
+    metadata:
+      labels:
+        app: nginx
+    spec:
+      containers:
+      - name: nginx
+        image: nginx:latest
+        ports:
+        - containerPort: 80
